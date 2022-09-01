@@ -1,0 +1,58 @@
+.popover {
+  position: relative;
+  display: inline-block;
+}
+.popover .message {
+  color: #ffffff;
+  position: absolute;
+  background: #000000;
+  border-radius: 4px;
+  opacity: 0;
+  margin: 0;
+  padding: 10px;
+  font-size: 12px;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.popover.show,
+.popover:hover {
+  z-index: 999;
+}
+.popover.show .message,
+.popover:hover .message {
+  opacity: 0.8;
+}
+.popover.vertical-bottom .message {
+  top: 100%;
+  margin-top: 10px;
+}
+.popover.vertical-top .message {
+  bottom: 100%;
+  margin-bottom: 10px;
+}
+.popover.vertical-center .message {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.popover.horizontal-left .message {
+  left: 0;
+}
+.popover.horizontal-right .message {
+  right: 0;
+}
+.popover.horizontal-center .message {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.popover.horizontal-left.vertical-center .message {
+  right: 100%;
+  left: auto;
+}
+.popover.horizontal-right.vertical-center .message {
+  left: 100%;
+  right: auto;
+}
+.popover.horizontal-center.vertical-center .message {
+  transform: translate(-50%, -50%);
+}

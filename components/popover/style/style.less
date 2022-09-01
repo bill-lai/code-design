@@ -1,0 +1,62 @@
+
+.popover {
+  position: relative;
+  display: inline-block;
+
+  .message {
+    color: rgba(255,255,255,1);
+    position: absolute;
+    background: #000000;
+    border-radius: 4px;
+    opacity: 0;
+    margin: 0;
+    padding: 10px;
+    font-size: 12px;
+    transition: opacity .3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  &.show,
+  &:hover {
+    z-index: 999;
+    .message {
+      opacity: 0.8;
+    }
+  }
+
+  &.vertical-bottom .message {
+    top: 100%;
+    margin-top: 10px;
+  }
+  &.vertical-top .message {
+    bottom: 100%;
+    margin-bottom: 10px;
+  }
+  &.vertical-center .message {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &.horizontal-left .message {
+    left: 0;
+  }
+  &.horizontal-right .message {
+    right: 0;
+  }
+  &.horizontal-center .message {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &.horizontal-left.vertical-center .message {
+    right: 100%;
+    left: auto;
+  }
+  &.horizontal-right.vertical-center .message {
+    left: 100%;
+    right: auto;
+  }
+  &.horizontal-center.vertical-center .message {
+    transform: translate(-50%, -50%);
+  }
+}
+
